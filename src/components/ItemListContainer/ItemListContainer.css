@@ -1,0 +1,14 @@
+.ListGroup{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+.CardItem{
+    border-radius: 5%;
+  background-color: rgba(241, 241, 241, 0.293);
+
+}
+
+img{
+    max-width: 100px;
+}

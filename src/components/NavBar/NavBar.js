@@ -1,22 +1,29 @@
 
 import CartWidget from "../CartWidget/CartWidget";
-import "bulma/css/bulma.css";
+import { NavLink, Link } from "react-router-dom";
+import "./NavBar.css"
 
 
 const NavBar = () => {
   return (
-    <nav className="hero is-primary">
-      <h3>Ecommerce</h3>
+    <nav className="NavBar">
+      <Link to="/">
+        <h3>Ecommerce</h3>
+      </Link>
       <div>
-        <button className="button is-primary is-light">Remeras</button>
-        <button className="button is-primary is-light">Jeans</button>
-        <button className="button is-primary is-light">Camperas</button>
 
-        <h1><CartWidget/></h1>
-       
+      <NavLink to="/category/men" className={({isActive}) => isActive ? "ActiveOption" : "Option" }>Men clothing</NavLink>
+        <NavLink to="/category/women" className={({isActive}) => isActive ? "ActiveOption" : "Option" }>Women clothing</NavLink>
+        <NavLink to="/category/electronics" className={({isActive}) => isActive ? "ActiveOption" : "Option" }>Electronics</NavLink>
+
+
+        {/* <NavLink to={"/category/men's clothing"} className={({isActive}) =>isActive ? "ActiveOption" : "Option" }>Men clothing</NavLink>
+        <NavLink to={"/category/women's clothing"} className={({isActive}) =>isActive ? "ActiveOption" : "Option" }>Women clothing</NavLink>
+        <NavLink to={"/category/electronics"} className={({isActive}) =>isActive ? "ActiveOption" : "Option" }>Electronoics</NavLink> */}
       </div>
+      <CartWidget/>
     </nav>
-  );
-};
+  )
+}
 
 export default NavBar;
